@@ -1,34 +1,50 @@
 export type PageType = 'home' | 'menu' | 'flow' | 'recruit';
 
-export interface Feature {
+export type Feature = {
   icon: React.ComponentType<{ className?: string }>;
   title: string;
   description: string;
-}
+};
 
-export interface MenuItem {
+export type MenuItem = {
   id: string;
   title: string;
   price: string;
   description: string;
   duration: string;
-}
+};
 
-export interface FlowStep {
+export type FlowStep = {
   step: number;
   title: string;
   description: string;
-}
+};
 
-export interface JobInfo {
+export type JobInfo = {
   position: string;
   type: string;
   requirements: string;
   salary: string;
   workingHours: string;
   benefits: string;
-}
+};
 
-export interface Benefit {
+export type Benefit = {
   text: string;
-}
+};
+
+export type NavItem = {
+  id: PageType;
+  label: string;
+};
+
+export type ContactInfo = {
+  phone: string;
+  email: string;
+  address: string;
+  businessHours: {
+    weekday: string;
+    weekend: string;
+    holiday: string;
+  };
+};
