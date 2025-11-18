@@ -1,9 +1,17 @@
 import { Scissors, Clock, Users } from 'lucide-react';
-import type { Feature, MenuItem, FlowStep, JobInfo, Benefit } from '../types';
+import type {
+  Feature,
+  MenuItem,
+  FlowStep,
+  JobInfo,
+  Benefit,
+  NavItem,
+  ContactInfo
+} from '../types';
 
-export const SITE_NAME = 'CLASSIC BARBER';
+export const SITE_NAME = 'CLASSIC BARBER' as const;
 
-export const CONTACT_INFO = {
+export const CONTACT_INFO: ContactInfo = {
   phone: '03-1234-5678',
   email: 'info@classicbarber.jp',
   address: '東京都渋谷区1-2-3',
@@ -12,9 +20,16 @@ export const CONTACT_INFO = {
     weekend: '9:00 - 19:00',
     holiday: '毎週月曜日'
   }
-};
+} as const;
 
-export const FEATURES: Feature[] = [
+export const NAV_ITEMS: readonly NavItem[] = [
+  { id: 'home', label: 'ホーム' },
+  { id: 'menu', label: '料金メニュー' },
+  { id: 'flow', label: 'ご利用の流れ' },
+  { id: 'recruit', label: '求人情報' }
+] as const;
+
+export const FEATURES: readonly Feature[] = [
   {
     icon: Scissors,
     title: '熟練の技術',
@@ -30,9 +45,9 @@ export const FEATURES: Feature[] = [
     title: '個別対応',
     description: 'お客様のライフスタイルに合わせた、パーソナルなスタイリング提案'
   }
-];
+] as const;
 
-export const MENU_ITEMS: MenuItem[] = [
+export const MENU_ITEMS: readonly MenuItem[] = [
   {
     id: 'cut',
     title: 'カット',
@@ -61,9 +76,9 @@ export const MENU_ITEMS: MenuItem[] = [
     description: 'スタイリングが楽になる',
     duration: '約90分'
   }
-];
+] as const;
 
-export const FLOW_STEPS: FlowStep[] = [
+export const FLOW_STEPS: readonly FlowStep[] = [
   {
     step: 1,
     title: 'ご予約',
@@ -89,7 +104,7 @@ export const FLOW_STEPS: FlowStep[] = [
     title: 'お会計・次回予約',
     description: 'お会計と次回のご予約を承ります。次回のご来店を心よりお待ちしております。'
   }
-];
+] as const;
 
 export const JOB_INFO: JobInfo = {
   position: '理容師募集',
@@ -98,11 +113,11 @@ export const JOB_INFO: JobInfo = {
   salary: '正社員: 月給25万円〜40万円(経験・能力による)\nアルバイト: 時給1,200円〜1,800円',
   workingHours: '9:30〜20:30(シフト制)\n週休2日制',
   benefits: '社会保険完備、交通費支給、技術研修制度あり、制服貸与'
-};
+} as const;
 
-export const BENEFITS: Benefit[] = [
+export const BENEFITS: readonly Benefit[] = [
   { text: '最新の技術を学べる研修制度' },
   { text: 'アットホームな職場環境' },
   { text: 'キャリアアップ支援制度' },
   { text: '充実した教育プログラム' }
-];
+] as const;
